@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 import IPython.display as ipd
 
 from NMFtoolbox.python.NMFtoolbox.forwardSTFT import forwardSTFT
-from NMFtoolbox.python.NMFtoolbox.inverseSTFT import inverseSTFT
 from NMFtoolbox.python.NMFtoolbox.initTemplates import initTemplates
 from NMFtoolbox.python.NMFtoolbox.initActivations import initActivations
 from NMFtoolbox.python.NMFtoolbox.NMF import NMF
@@ -14,7 +13,7 @@ from NMFtoolbox.python.NMFtoolbox.alphaWienerFilter import alphaWienerFilter
 from NMFtoolbox.python.NMFtoolbox.visualizeComponentsNMF import visualizeComponentsNMF
 from NMFtoolbox.python.NMFtoolbox.utils import make_monaural, pcmInt16ToFloat32Numpy
 
-inpPath = 'NMFtoolbox/data/'
+inpPath = 'data/'
 outPath = 'output/'
 
 # create the output directory if it doesn't exist
