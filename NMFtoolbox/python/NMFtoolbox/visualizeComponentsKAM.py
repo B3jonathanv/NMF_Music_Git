@@ -33,8 +33,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
 
-from NMFtoolbox.logFreqLogMag import logFreqLogMag
-from NMFtoolbox.coloredComponents import coloredComponents
+from NMFtoolbox.python.NMFtoolbox.logFreqLogMag import logFreqLogMag
+from NMFtoolbox.python.NMFtoolbox.coloredComponents import coloredComponents
 
 
 def visualizeComponentsKAM(compA, parameter=None):

@@ -31,8 +31,8 @@
 
 from scipy.ndimage import median_filter
 
-from NMFtoolbox.percussivenessEstimation import percussivenessEstimation
-from NMFtoolbox.NEMA import NEMA
+from NMFtoolbox.python.NMFtoolbox.percussivenessEstimation import percussivenessEstimation
+from NMFtoolbox.python.NMFtoolbox.NEMA import NEMA
 
 
 def drumSpecificSoftConstraintsNMF(W, H, iter, numIter, parameter):

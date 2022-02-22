@@ -37,7 +37,7 @@ from scipy.ndimage import maximum_filter
 import matplotlib.pyplot as plt
 from tqdm import tnrange
 
-from NMFtoolbox.utils import EPS
+from NMFtoolbox.python.NMFtoolbox.utils import EPS
 
 
 def NMFdiag(V, W0, H0, parameter=None):

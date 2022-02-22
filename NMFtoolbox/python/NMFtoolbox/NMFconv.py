@@ -34,11 +34,11 @@ import numpy as np
 from copy import deepcopy
 from tqdm import tnrange
 
-from NMFtoolbox.initTemplates import initTemplates
-from NMFtoolbox.initActivations import initActivations
-from NMFtoolbox.convModel import convModel
-from NMFtoolbox.shiftOperator import shiftOperator
-from NMFtoolbox.utils import EPS
+from NMFtoolbox.python.NMFtoolbox.initTemplates import initTemplates
+from NMFtoolbox.python.NMFtoolbox.initActivations import initActivations
+from NMFtoolbox.python.NMFtoolbox.convModel import convModel
+from NMFtoolbox.python.NMFtoolbox.shiftOperator import shiftOperator
+from NMFtoolbox.python.NMFtoolbox.utils import EPS
 
 
 def NMFconv(V, parameter=None):

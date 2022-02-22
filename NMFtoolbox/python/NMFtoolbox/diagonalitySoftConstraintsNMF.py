@@ -30,7 +30,7 @@
 """
 
 import numpy as np
-from NMFtoolbox.utils import conv2
+from NMFtoolbox.python.NMFtoolbox.utils import conv2
 
 
 def diagonalitySoftConstraintsNMF(W, H, iter, numIter, parameter):

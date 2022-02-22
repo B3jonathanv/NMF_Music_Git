@@ -33,8 +33,8 @@ from copy import deepcopy
 
 import numpy as np
 
-from NMFtoolbox.forwardSTFT import forwardSTFT
-from NMFtoolbox.inverseSTFT import inverseSTFT
+from NMFtoolbox.python.NMFtoolbox.forwardSTFT import forwardSTFT
+from NMFtoolbox.python.NMFtoolbox.inverseSTFT import inverseSTFT
 
 
 def LSEE_MSTFTM_GriffinLim(X, parameter=None):

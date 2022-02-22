@@ -100,12 +100,11 @@ def NMF(V, parameter):
     V /= (EPS + V.sum())
 
     # main iterations
-    i = 0
-    f = []
+    f = list()
     f.append(0.5 * numpy.linalg.norm(V - W @ H, 'fro') ** 2)
     w_change = []
     h_change = []
-    for iter in tnrange(L, desc='Processing'):
+    for _ in tnrange(L, desc='Processing'):
 
         w_prev = deepcopy(W)
         h_prev = deepcopy(H)
@@ -130,26 +129,21 @@ def NMF(V, parameter):
 
             if reg == 'FrobH':
                 if not parameter['fixW']:
-
                     W *= (V @ H.T / (Lambda @ H.T + EPS))
 
                 H *= (W.T @ V / (W.T @ Lambda + p * H + EPS))
 
             if reg == '1W':
                 if not parameter['fixW']:
-
                     W *= (V @ H.T / (Lambda @ H.T + p + EPS))
 
                 H *= (W.T @ V / (W.T @ Lambda + EPS))
 
             if reg == '1H':
                 if not parameter['fixW']:
-
                     W *= (V @ H.T / (Lambda @ H.T + EPS))
 
                 H *= (W.T @ V / (W.T @ Lambda + p + EPS))
-
-
 
         elif parameter['costFunc'] == 'KLDiv':  # Kullback Leibler divergence update rules
             if not parameter['fixW']:
@@ -174,7 +168,6 @@ def NMF(V, parameter):
         f.append(0.5 * numpy.linalg.norm(V - W @ H, 'fro') ** 2)
         w_change.append(numpy.linalg.norm(W - w_prev, 'fro'))
         h_change.append(numpy.linalg.norm(H - h_prev, 'fro'))
-        i = i+1
 
     nmfV = list()
 
@@ -182,7 +175,8 @@ def NMF(V, parameter):
     for r in range(R):
         nmfV.append(W[:, r].reshape(-1, 1) @ H[r, :].reshape(1, -1))
 
-    return W, H, nmfV, f, w_change, h_change
+    info = {'f': f, 'w_change': w_change, 'h_change': h_change}
+    return W, H, nmfV, info
 
 
 def init_parameters(parameter):

@@ -34,7 +34,7 @@ import numpy as np
 from scipy.ndimage import median_filter
 from scipy.signal import convolve2d
 
-from NMFtoolbox.alphaWienerFilter import alphaWienerFilter
+from NMFtoolbox.python.NMFtoolbox.alphaWienerFilter import alphaWienerFilter
 
 
 def HPSS_KAM_Fitzgerald(X, numIter=1, kernDim=17, useMedian=False, alphaParam=1.0):
