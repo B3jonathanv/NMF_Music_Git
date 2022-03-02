@@ -100,8 +100,7 @@ def NMF(V, parameter):
     V /= (EPS + V.sum())
 
     # main iterations
-    f = list()
-    f.append(0.5 * numpy.linalg.norm(V - W @ H, 'fro') ** 2)
+    f = [0.5 * np.linalg.norm(V - W @ H, 'fro') ** 2]
     w_change = []
     h_change = []
     for _ in tnrange(L, desc='Processing'):
@@ -175,8 +174,7 @@ def NMF(V, parameter):
     for r in range(R):
         nmfV.append(W[:, r].reshape(-1, 1) @ H[r, :].reshape(1, -1))
 
-    info = {'f': f, 'w_change': w_change, 'h_change': h_change}
-    return W, H, nmfV, info
+    return W, H, nmfV, f, w_change, h_change
 
 
 def init_parameters(parameter):

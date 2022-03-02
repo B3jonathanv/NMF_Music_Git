@@ -3,7 +3,6 @@ import os
 import numpy as np
 import scipy.io.wavfile as wav
 import matplotlib.pyplot as plt
-import IPython.display as ipd
 
 from NMFtoolbox.python.NMFtoolbox.forwardSTFT import forwardSTFT
 from NMFtoolbox.python.NMFtoolbox.initTemplates import initTemplates
@@ -20,10 +19,12 @@ parser = argparse.ArgumentParser(description='NMF with Regularization')
 
 # file info
 parser.add_argument('--filename', type=str, default='eqt-major-sc.wav')
+# parser.add_argument('--filename', type=str, default='runningExample_AmenBreak.wav')
 parser.add_argument('--load-dir', type=str, default='data/')
 parser.add_argument('--save-dir', type=str, default='output/')
 
 # NMF info
+parser.add_argument('--r', type=int, default=8)
 parser.add_argument('--reg', type=str, default='None')
 parser.add_argument('--p', type=float, default=0.0)
 parser.add_argument('--costFunc', type=str, default='EucDist')
@@ -74,7 +75,7 @@ deltaF = fs / paramSTFT['blockSize']
 #%% NMF Initialization
 
 # set common parameters
-numComp = 8
+numComp = args.r
 numIter = 50
 numTemplateFrames = 8
 
@@ -109,14 +110,21 @@ paramNMF['initH'] = initH
 # NMFD core method
 noise_level = args.noise_level
 A = A + noise_level * np.linalg.norm(A) * abs(np.random.randn(*A.shape))
-nmfW, nmfH, nmfV, info = NMF(A, paramNMF)
+nmfW, nmfH, nmfV, f, w_change, h_change = NMF(A, paramNMF)
 
 # alpha-Wiener filtering
 nmfA, _ = alphaWienerFilter(A, nmfV, 1.0)
 
 #%% Visualization
 
-f, w_change, h_change = info['f'], info['w_change'], info['h_change']
+# visualize the spectrogram, W and H
+paramVis = dict()
+paramVis['deltaT'] = deltaT
+paramVis['deltaF'] = deltaF
+#paramVis['endeSec'] = 3.8
+#paramVis['fontSize'] = 14
+fh1, _ = visualizeComponentsNMF(A, nmfW, nmfH, nmfA, paramVis)
+plt.show()
 
 # Graphing the change in f
 x = range(0, numIter+1)
@@ -149,11 +157,4 @@ plt.title('Change in H Between Iterations')
 plt.show()
 
 
-# visualize the spectrogram, W and H
-paramVis = dict()
-paramVis['deltaT'] = deltaT
-paramVis['deltaF'] = deltaF
-#paramVis['endeSec'] = 3.8
-#paramVis['fontSize'] = 14
-fh1, _ = visualizeComponentsNMF(A, nmfW, nmfH, nmfA, paramVis)
-plt.show()
+
