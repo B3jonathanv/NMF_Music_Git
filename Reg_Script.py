@@ -89,7 +89,7 @@ paramNMF['numTemplateFrames'] = numTemplateFrames
 paramNMF['initW'] = np.concatenate(initW, axis=1)
 paramNMF['initH'] = initH
 
-# NMFD core method
+# NMF core method
 noise_level = 0
 A = A + noise_level * np.linalg.norm(A) * abs(np.random.randn(*A.shape))
 nmfW, nmfH, nmfV, f, w_change, h_change = NMF(A, paramNMF)
