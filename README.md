@@ -13,7 +13,7 @@ git clone https://github.com/B3jonathanv/NMF_Music_Git.git
 
 ## Citation
 
-If this repository is utilized and/or any information contained within Jonathan Valyou's thesis, please include the following citation:
+If this repository is utilized and/or any information contained within the thesis entitled "Nonnegative Matrix Factorization for Music - Tuning the NMF Algorithm with Regularization", please include the following citation:
 
 Valyou Jonathan.  Nonnegative Matrix Factorization for Music - Tuning the NMF Algorithm with
 Regularization.  Emory Theses and Dissertations Repository.  3 May 2022.
