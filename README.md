@@ -13,13 +13,14 @@ git clone https://github.com/B3jonathanv/NMF_Music_Git.git
 
 ## Citation
 
-Here, we would include a way to cite your thesis
+If this repository is utilized and/or any information contained within Jonathan Valyou's thesis, please include the following citation:
+
+Valyou Jonathan.  Nonnegative Matrix Factorization for Music - Tuning the NMF Algorithm with
+Regularization.  Emory Theses and Dissertations Repository.  3 May 2022.
+
+
 
 ## Examples
-
-This is temporary
-
-[Colab Notebook Draft](https://colab.research.google.com/drive/1LmfdaCCIR96EY2Ur4w7kOO48dYMPIfEj?usp=sharing) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1LmfdaCCIR96EY2Ur4w7kOO48dYMPIfEj?usp=sharing)
 
 <img width="672" alt="Visualization_Guide copy" src="https://user-images.githubusercontent.com/72425355/162584465-e5e09a60-d6ca-41c2-baf2-b9564d02bd20.png">
 The spectrogram X is the bottom right corner with axes of time(seconds) and frequency(Hz). The visual representation of the frequency data for each source W is in the bottom left of the diagram. The visual representation of the temporal data for each source H is in the top right corner of the diagram.
