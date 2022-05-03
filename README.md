@@ -1,7 +1,7 @@
 # NMF for Music
 
 This repository accompanies Jonathan Valyou's honors thesis entitled "Nonnegative Matrix Factorization for Music - Tuning the NMF Algorithm with
-Regularization" which can be located in the Emory University Honors Thesis Archives.  Much of this code was adapted from the NMF Toolbox repository: https://www.audiolabs-erlangen.de/resources/MIR/NMFtoolbox/#Python.  This repository explores how Nonnegative Matrix Factorization(NMF) can be utilized in source separation in music and introduces Regularized NMF algorithm code to aid in denoising audio and promoting sparsity.
+Regularization" which can be located in the Emory University Honors Thesis Archives at the following link: https://etd.library.emory.edu/concern/etds/np193b40x?locale=en.  Much of this code was adapted from the NMF Toolbox repository: https://www.audiolabs-erlangen.de/resources/MIR/NMFtoolbox/#Python.  This repository explores how Nonnegative Matrix Factorization(NMF) can be utilized in source separation in music and introduces Regularized NMF algorithm code to aid in denoising audio and promoting sparsity.
 
 ## Installation
 
